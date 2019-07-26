@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="intro">
+    {{ description }}
+    <a href="/about">О нас</a>
+</div>
+<div class="offer-wrapper">
+    {% for offer in offers %}
+        {{ offer.name }}
+        <a href="/offer/{{ offer.link }}">Подробнее</a>
+    {% endfor %}
+</div>
+</body>
+</html>
