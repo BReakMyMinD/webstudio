@@ -81,10 +81,7 @@ def message(request, order_id):
     if not order.client == request.user and not request.user.is_staff:
         return HttpResponseForbidden()
     elif request.is_ajax():
-        if request.method == 'GET':
-            data = serializers.serialize('json', order.messages.filter()[:5])
-            return JsonResponse(data, safe=False)
-        else:
+        if request.method == 'POST':
             data = json.loads(request.body)
             try:
                 text = data['text']
@@ -92,7 +89,17 @@ def message(request, order_id):
                 return HttpResponseServerError('Wrong data')
             msg = Message.objects.create(text=text, is_client=not request.user.is_staff)
             order.messages.add(msg)
-            data = serializers.serialize('json', msg)
+            data = json.dumps({
+                "text": msg.text,
+                "is_client": msg.is_client,
+                "date": {
+                    "year": msg.date.year,
+                    "month": msg.date.month,
+                    "day": msg.date.day,
+                    "hours": msg.date.hour,
+                    "minutes": msg.date.minute
+                }
+            })
             return JsonResponse(data, safe=False)
     else:
         return HttpResponseBadRequest()
