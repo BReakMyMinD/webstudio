@@ -27,15 +27,15 @@
         <a class="nav-link" href="/about/">О нас</a>
       </li>
         {% if user.is_authenticated %}
-      <li class="nav-item">
+      <li class="nav-item justify-content-end">
           <a href="/accounts/logout/" class="nav-link">Выйти</a>
       </li>
         {% else %}
       
-      <li class="nav-item">
+      <li class="nav-item justify-content-end">
           <a href="/register/" class="nav-link">Зарегистрироваться</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item justify-content-end">
           <a href="/accounts/login/" class="nav-link">Войти</a>
       </li>
         {% endif %}
