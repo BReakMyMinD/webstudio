@@ -60,14 +60,19 @@
 
 
 <div class="container">
+  <div class="row">
     {% for offer in offers %}
-        <div class="card" style="width: 18rem;">
+    <div class="col-12 col-sm-6 col-lg-4 col-xl-3 my-2 ">
+        <div class="card border-dark">
             <div class="card-body">
+              <img src="..." class="card-img-top" alt="...">
                 <h5 class="card-title">{{ offer.name }}</h5>
                 <a href="/offer/{{ offer.link }}" class="btn btn-primary">Подробнее</a>
             </div>
         </div>
+    </div>
     {% endfor %}
+    </div>
 </div>
 
 
