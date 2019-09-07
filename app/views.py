@@ -1,6 +1,6 @@
 from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponseRedirect, HttpResponseForbidden, HttpResponseServerError, HttpResponseBadRequest
-from .models import About, Offer, Order, Message
+from .models import About, Offer, Order, Message, Question
 from .forms import RegisterForm, OrderForm
 from django.contrib.auth.decorators import login_required
 from django.core import serializers
@@ -11,9 +11,11 @@ import json
 def index(request):
     info = About.objects.first()
     offers = Offer.objects.all()
+    questions = Question.objects.all()
     context = {
         'description': info.short_description,
-        'offers': offers
+        'offers': offers,
+        'questions': questions
     }
     return render(request, 'index.html', context)
 

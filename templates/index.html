@@ -26,16 +26,19 @@
       <li class="nav-item">
         <a class="nav-link" href="/about/">О нас</a>
       </li>
+    </ul>
+    <ul class="navbar-nav ustify-content-end">
         {% if user.is_authenticated %}
-      <li class="nav-item">
+      <li class="nav-item ">
           <a href="/accounts/logout/" class="nav-link">Выйти</a>
       </li>
         {% else %}
-      <li class="nav-item">
-          <a href="/accounts/login/" class="nav-link">Войти</a>
-      </li>
-      <li class="nav-item">
+
+      <li class="nav-item ">
           <a href="/register/" class="nav-link">Зарегистрироваться</a>
+      </li>
+      <li class="nav-item ">
+          <a href="/accounts/login/" class="nav-link">Войти</a>
       </li>
         {% endif %}
     </ul>
@@ -55,37 +58,42 @@
 
 
 <div class="container">
+  <div class="row justify-content-md-center">
     {% for offer in offers %}
-        <div class="card" style="width: 18rem;">
+    <div class="col-12 col-sm-6 col-lg-4 col-xl-3 my-2 ">
+        <div class="card border-dark">
             <div class="card-body">
                 <h5 class="card-title">{{ offer.name }}</h5>
                 <a href="/offer/{{ offer.link }}" class="btn btn-primary">Подробнее</a>
             </div>
         </div>
+    </div>
     {% endfor %}
+    </div>
 </div>
 
 
 <br>
 
+  {% for item in questions %}
 <div class="accordion" id="accordionExample">
   <div class="card">
     <div class="card-header" id="headingOne">
       <h5 class="mb-0">
         <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-          Разворачиваемая панель #1
+          {{ item.question }}
         </button>
       </h5>
     </div>
 
     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
       <div class="card-body">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+          {{ item.answer }}
       </div>
     </div>
   </div>
 </div>
-
+ {% endfor %}
 
 
 

@@ -13,6 +13,10 @@ class Offer(models.Model):
         return self.name
 
 
+class Question(models.Model):
+    question = models.CharField(max_length=200)
+    answer = models.TextField()
+
 class About(models.Model):
     short_description = models.TextField()
     full_description = models.TextField()

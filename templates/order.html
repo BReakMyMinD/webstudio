@@ -26,16 +26,19 @@
       <li class="nav-item">
         <a class="nav-link" href="/about/">О нас</a>
       </li>
+    </ul>
+    <ul class="navbar-nav ustify-content-end">
         {% if user.is_authenticated %}
-      <li class="nav-item">
+      <li class="nav-item ">
           <a href="/accounts/logout/" class="nav-link">Выйти</a>
       </li>
         {% else %}
-      <li class="nav-item">
-          <a href="/accounts/login/" class="nav-link">Войти</a>
-      </li>
-      <li class="nav-item">
+
+      <li class="nav-item ">
           <a href="/register/" class="nav-link">Зарегистрироваться</a>
+      </li>
+      <li class="nav-item ">
+          <a href="/accounts/login/" class="nav-link">Войти</a>
       </li>
         {% endif %}
     </ul>
@@ -75,13 +78,13 @@
 
 
 
-<div id="message-field">
+<!--<div id="message-field">
 
 
         <textarea id="msg-input"></textarea>
         <button class="btn btn-primary" type="button" onclick="sendMessage()">Отправить</button>
 
-</div>
+</div>-->
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -100,7 +103,7 @@
                     alert(data);
                 }
             });
-        }*/
+        }
 
         function sendMessage(){
             text = $("#msg-input").val();
@@ -136,7 +139,7 @@
 
         if ( window.history.replaceState ) {
             window.history.replaceState( null, null, window.location.href );
-        }
+        }*/
     </script>
   </body>
 </html>
