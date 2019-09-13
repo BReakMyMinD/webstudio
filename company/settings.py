@@ -26,7 +26,7 @@ SECRET_KEY = 'ca5v0iv0)t4zo#y-ee^v85t^5mbtl-2-le1y!zu04vl)@cv_tm'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['webstudiosite.herokuapp.com']
+ALLOWED_HOSTS = ['localhost', '.herokuapp.com']
 
 
 # Application definition
@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'company.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-DATABASES = {}
+
 DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
 
