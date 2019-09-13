@@ -52,7 +52,7 @@
   <hr class="my-4">
   <p>Больше информации о нас вы можете прочитать по ссылке</p>
   <p class="lead">
-    <a class="btn btn-primary btn-lg" href="/about/" role="button">Learn more</a>
+    <a class="btn btn-primary btn-lg" href="/about/" role="button">Подробнее о нас</a>
   </p>
 </div>
 
@@ -78,15 +78,15 @@
   {% for item in questions %}
 <div class="accordion" id="accordionExample">
   <div class="card">
-    <div class="card-header" id="headingOne">
+    <div class="card-header" id="heading">
       <h5 class="mb-0">
-        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse" aria-expanded="true" aria-controls="collapseOne">
           {{ item.question }}
         </button>
       </h5>
     </div>
 
-    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+    <div id="collapse" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
       <div class="card-body">
           {{ item.answer }}
       </div>
@@ -94,6 +94,83 @@
   </div>
 </div>
  {% endfor %}
+    
+    
+    
+    
+    <footer style="background-color: #e3e3e3;">
+      <hr />
+
+  <!-- Footer Links -->
+  <div class="container-fluid text-center text-md-left">
+
+    <!-- Grid row -->
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-md-6 mt-md-0 mt-3">
+
+        <!-- Content -->
+        <h5 class="text-uppercase">О нас:</h5>
+        <p>Веб-студия.</p>
+
+      </div>
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none pb-3">
+
+      <!-- Grid column -->
+      <div class="col-md-3 mb-md-0 mb-3">
+
+        <!-- Links -->
+        <h5 class="text-uppercase">Ссылки</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="#!">Ссылка 1</a>
+          </li>
+          <li>
+            <a href="#!">Ссылка 2</a>
+          </li>
+          
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-3 mb-md-0 mb-3">
+
+        <!-- Links -->
+        <h5 class="text-uppercase">Ссылки</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="#!">Ссылка 1</a>
+          </li>
+          <li>
+            <a href="#!">Ссылка 2</a>
+          </li>
+          
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+  </div>
+  <!-- Footer Links -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2019 Copyright:
+    <a href="http://webstudiosite.herokuapp.com/"> http://webstudiosite.herokuapp.com/</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
 
 
 
